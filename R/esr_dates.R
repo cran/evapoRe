@@ -2,8 +2,7 @@
 #'
 #' Fix dates for best ESR estimates
 #'
-#' @import  data.table
-#' @import pRecipe
+#' @rawNamespace import(data.table, except = c("month", "yday", "year"))
 #' @importFrom methods as
 #' @importFrom raster getZ
 #' @param x a character string with the path to the data file.

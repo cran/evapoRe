@@ -2,17 +2,27 @@
 % Please edit documentation in R/esr.R
 \name{esr}
 \alias{esr}
-\title{Extraterrestrial Solar Radiation (ESR)}
+\alias{esr,Raster-method}
+\alias{esr,character-method}
+\title{Calculate Extraterrestrial Solar Radiation (ESR)}
 \usage{
 esr(x)
+
+\S4method{esr}{Raster}(x)
+
+\S4method{esr}{character}(x)
 }
 \arguments{
-\item{x}{a character string with the path to the data file.}
+\item{x}{A `Raster*` object or a file path (`character`) to a raster file.}
 }
 \value{
-data.table
+A `RasterBrick` of daily extraterrestrial solar radiation (MJ m-2 day-1).
 }
 \description{
-Calculate ESR for a given raster template
+Computes extraterrestrial solar radiation (MJ m-2 day-1) based on latitude and day of the year.
+}
+\details{
+For raster inputs, provide a `Raster*` object or file path (`character`)
+The function estimates extraterrestrial radiation.
 }
 \keyword{internal}

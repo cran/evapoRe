@@ -2,17 +2,30 @@
 % Please edit documentation in R/oudin.R
 \name{oudin}
 \alias{oudin}
-\title{PET calculation by Oudin method}
+\alias{oudin,Raster-method}
+\alias{oudin,data.table-method}
+\alias{oudin,character-method}
+\title{Calculate Potential Evapotranspiration (PET) using Oudin method}
 \usage{
 oudin(x)
+
+\S4method{oudin}{Raster}(x)
+
+\S4method{oudin}{data.table}(x)
+
+\S4method{oudin}{character}(x)
 }
 \arguments{
-\item{x}{a RasterBrick object having average temperature}
+\item{x}{Raster* object, character file path, or data.table (see details)}
 }
 \value{
-a RasterBrick object
+RasterBrick or data.table of PET values (mm/day)
 }
 \description{
-Calculate pet
+The function \code{oudin} computes PET using the Oudin method.
+}
+\details{
+For Raster inputs, provide a raster object or file path for average temperature.
+For `data.table` input, provide a table with columns: "lon", "lat", "date", and "tavg".
 }
 \keyword{internal}

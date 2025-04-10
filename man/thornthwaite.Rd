@@ -2,17 +2,30 @@
 % Please edit documentation in R/thornthwaite.R
 \name{thornthwaite}
 \alias{thornthwaite}
-\title{PET calculation by Thornthwaite method}
+\alias{thornthwaite,Raster-method}
+\alias{thornthwaite,character-method}
+\alias{thornthwaite,data.table-method}
+\title{Calculate Potential Evapotranspiration (PET) using Thornthwaite method}
 \usage{
 thornthwaite(x)
+
+\S4method{thornthwaite}{Raster}(x)
+
+\S4method{thornthwaite}{character}(x)
+
+\S4method{thornthwaite}{data.table}(x)
 }
 \arguments{
-\item{x}{a RasterBrick object having average temperature}
+\item{x}{Raster* object, character file path, or data.table (see details)}
 }
 \value{
-a RasterBrick object
+RasterBrick or data.table of PET values (mm/day)
 }
 \description{
-Calculate pet
+The function \code{thornthwaite} computes PET using the Thornthwaite method.
+}
+\details{
+For Raster input, provide a raster object or file path for average temperature.
+For `data.table` input, provide a table with columns: "lon", "lat", "date", and "tavg".
 }
 \keyword{internal}

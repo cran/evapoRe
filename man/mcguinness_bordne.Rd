@@ -2,17 +2,30 @@
 % Please edit documentation in R/mcguinness_bordne.R
 \name{mcguinness_bordne}
 \alias{mcguinness_bordne}
-\title{PET calculation by McGuinness Bordne method}
+\alias{mcguinness_bordne,Raster-method}
+\alias{mcguinness_bordne,character-method}
+\alias{mcguinness_bordne,data.table-method}
+\title{Calculate Potential Evapotranspiration (PET) using McGuinness-Bordne method}
 \usage{
 mcguinness_bordne(x)
+
+\S4method{mcguinness_bordne}{Raster}(x)
+
+\S4method{mcguinness_bordne}{character}(x)
+
+\S4method{mcguinness_bordne}{data.table}(x)
 }
 \arguments{
-\item{x}{a RasterBrick object having average temperature}
+\item{x}{Raster* object, character file path, or data.table (see details)}
 }
 \value{
-a RasterBrick object
+RasterBrick or data.table of PET values (mm/day)
 }
 \description{
-Calculate pet
+The function \code{mcguinness_bordne} computes PET using the McGuinness and Bordne method.
+}
+\details{
+For Raster input, provide a raster object or file path for average temperature.
+For `data.table` input, provide a table with columns: "lon", "lat", "date", and "tavg".
 }
 \keyword{internal}

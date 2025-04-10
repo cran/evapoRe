@@ -2,17 +2,30 @@
 % Please edit documentation in R/jensen_haise.R
 \name{jensen_haise}
 \alias{jensen_haise}
-\title{PET calculation by Jensen Haise method}
+\alias{jensen_haise,Raster-method}
+\alias{jensen_haise,character-method}
+\alias{jensen_haise,data.table-method}
+\title{Calculate Potential Evapotranspiration (PET) using Jensen-Haise method}
 \usage{
 jensen_haise(x)
+
+\S4method{jensen_haise}{Raster}(x)
+
+\S4method{jensen_haise}{character}(x)
+
+\S4method{jensen_haise}{data.table}(x)
 }
 \arguments{
-\item{x}{a RasterBrick object having average temperature}
+\item{x}{Raster* object, character file path, or data.table (see details)}
 }
 \value{
-a RasterBrick object
+RasterBrick or data.table of PET values (mm/day)
 }
 \description{
-Calculate pet
+The function \code{jensen_haise} computes PET using the Jensen-Haise method.
+}
+\details{
+For Raster input, provide a raster object or file path for average temperature.
+For `data.table` input, provide a table with columns: "lon", "lat", "date", and "tavg".
 }
 \keyword{internal}
